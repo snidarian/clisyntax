@@ -1,4 +1,4 @@
-## Syntax Reference command line program
+### Syntax Reference command line program
 
 ### GOAL:
 Development of CLI program providing quick access to syntactic information in a given programming language
@@ -6,7 +6,7 @@ Development of CLI program providing quick access to syntactic information in a 
 
 
 
-### Development stages
+#### Development stages
 
 to be written
 
