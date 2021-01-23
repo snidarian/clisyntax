@@ -6,6 +6,17 @@ Development of CLI program providing quick access to syntactic information in a 
 
 
 
+#### Languages to be supported by cliSyntax (in the following order):
+- Python
+- JavaScript
+- C
+- LISP
+- Java
+- Ruby
+- More to follow
+
+
+
 #### Development stages
 
 to be written
