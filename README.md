@@ -7,10 +7,10 @@ Development of CLI program providing quick access to syntactic information in a 
 
 
 #### Languages to be supported by cliSyntax (in the following order):
-- Python
+- Python (3.8)
 - JavaScript
-- C
-- LISP
+- C (Ansi standard)
+- LISP (common Lisp)
 - Java
 - Ruby
 - More to follow
