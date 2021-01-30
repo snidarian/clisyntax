@@ -20,6 +20,7 @@ Development of CLI program providing quick access to syntactic information in a 
 - Ruby
 - Perl
 - Java
+- C++
 
 
 
