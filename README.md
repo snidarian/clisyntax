@@ -18,7 +18,7 @@ Development of CLI program providing quick access to syntactic information in a 
 - LISP (common Lisp)
 - Java
 - Ruby
-- More to follow
+- Perl
 
 
 
