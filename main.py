@@ -19,8 +19,8 @@ class ProgrammingLanguage:
               "for more information, visit the language's wikipedia page: " + self.wiki_link)
 
     def output_historical_information(self):
-        print(self.name + " was created by " + self.creators + " first appearing in " + self.first_appeared +
-              "Wikipedia writes: \n" + self.history)
+        print(self.name + " was created by " + self.creators + " first appearing in " + self.first_appeared + ". "
+              "\nWikipedia writes: " + self.history)
 
 
 class LanguageSyntax:
@@ -161,5 +161,8 @@ elif "javascript" in args.language:
     print("mark 5")
 else:
     print("Error: First argument - [Language] - not supported or else not recognized")
+
+
+
 
 
