@@ -54,7 +54,12 @@ LISP_lang = ProgrammingLanguage("Common LISP", "Multi-paradigm: functional, proc
                     "John McCarthy developed Lisp in 1958 while at the Massachusetts Institute of Technology (MIT)",
                     "https://en.wikipedia.org/wiki/Lisp_(programming_language)")
 
-LISP_syntax = LanguageSyntax("")
+LISP_syntax = LanguageSyntax("a", "a", "a", "a", "(case  (keyform)\n"
+                                             "((key1)   (action1   action2 ...) )\n"
+                                             "((key2)   (action1   action2 ...) )\n"
+                                             "...\n"
+                                             "((keyn)   (action1   action2 ...) ))\n",
+                             "a", "a", "a", "a", "a", "a", "a", "a", "a")
 
 # LanguageSyntax object class instatiations
 # LISP_syntax = LanguageSyntax("all syntax data here")
@@ -98,7 +103,9 @@ if "lisp" in args.language:
     elif args.syntax == "casestatement" or "case" in args.syntax:
         print(LISP_syntax.case_statement)
         if args.verbose:
-            print("")
+            print("EXAMPLE: \n(setq day 4)\n(case day\n(1 (format t \"~% Monday\"))\n(2 (format t \"~% Tuesday\"))\n"
+                  "(3 (format t \"~% Wednesday\"))\n(4 (format t \"~% Thursday\"))\n(5 (format t \"~% Friday\"))"
+                  "(6 (format t \"~% Saturday\"))\n(7 (format t \"~% Sunday\")))")
     elif args.syntax == "defineclass" or "class" in args.syntax:
         print(LISP_syntax.define_class)
         if args.verbose:
@@ -154,14 +161,5 @@ elif "javascript" in args.language:
     print("mark 5")
 else:
     print("Error: First argument - [Language] - not supported or else not recognized")
-
-
-
-
-
-
-
-
-
 
 
