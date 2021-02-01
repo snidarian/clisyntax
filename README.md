@@ -10,6 +10,9 @@ Development of CLI program providing quick access to syntactic information in a 
 
 
 
+### NOT THE GOAL:
+This is NOT a tool for learning the concepts of programming. This program is intended for those who already know many/most of the concepts and just need to know the specific/particular syntax of a unfamiliar or new language; It's also for those who could use a hand remembering syntax here and there.
+
 
 #### Languages to be supported by cliSyntax (in the following order):
 - Python (3.9)
