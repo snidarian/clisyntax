@@ -1,5 +1,5 @@
 #! /usr/local/bin/python3.9
-# cli syntax
+# cli syntax - provides syntax information and history from the command line
 
 import argparse
 
@@ -24,16 +24,40 @@ class ProgrammingLanguage:
 
 
 class LanguageSyntax:
-    def __init__(self, data_types, for_loop, while_loop, case_statement, define_class):
+    def __init__(self, data_types, operators, for_loop, while_loop, case_statement, class_definition, define_variable,
+                 array, function_definition, control_flow, user_input, output, arithmetic, hello_world):
+        self.operators = operators
         self.data_types = data_types
         self.for_loop = for_loop
         self.while_loop = while_loop
         self.case_statement = case_statement
+        self.class_definition = class_definition
+        self.variable_definition = define_variable
+        self.array = array
+        self.function_definition = function_definition
+        self.control_flow = control_flow
+        self.user_input = user_input
+        self.output = output
+        self.arithmetic = arithmetic
+        self.hello_world = hello_world
 
-    def return_not_available(self):
-        print("Error: Syntax item is not available currently")
-    def not_a_part_of_language(self):
-        print("Error: That syntax item is not a part of the lanaguage")
+    def return_not_available(self, structure_in_question):
+        print("Error: " + str(structure_in_question) + " is not available currently")
+
+    def not_a_part_of_language(self, structure_in_question):
+        print("Error: " + str(structure_in_question) + " is not a part of the language")
+
+
+# ProgrammingLanguage object instantiations
+LISP_lang = ProgrammingLanguage("Common LISP", "Multi-paradigm: functional, procedural, reflective, meta",
+                    "Dynamic, strong", "John McCarthy", "1958",
+                    "John McCarthy developed Lisp in 1958 while at the Massachusetts Institute of Technology (MIT)",
+                    "https://en.wikipedia.org/wiki/Lisp_(programming_language)")
+
+LISP_syntax = LanguageSyntax("")
+
+# LanguageSyntax object class instatiations
+# LISP_syntax = LanguageSyntax("all syntax data here")
 
 
 parser = argparse.ArgumentParser()
@@ -52,15 +76,65 @@ print(args.syntax)
 # LISP arg-tree
 if "lisp" in args.language:
     if args.syntax == "classification":
-        print("Common LISP:\n\tParadigm: Multi-paradigm - \n\tprocedural, functional, object-oriented, meta, reflective, generic")
-        print("Designed by:\n\tScott Fahlman, Richard P. Gabriel, David A. Moon, Kent Pitman, Guy Steele, Dan Weinreb")
-        print("Typing discipline:\n\tDynamic, Strong")
-    elif args.syntax == "forloop":
-        print("(loop for [loopvar] in <list>\n\tdo (action)\n)")
+        LISP_lang.output_language_classifications()
+    elif args.syntax == "history" or args.syntax == "historical":
+        LISP_lang.output_historical_information()
+    elif args.syntax == "datatypes":
+        print(LISP_syntax.user_input)
         if args.verbose:
-            print("For loop explanation in detail.. blah blah blah")
-    elif args.syntax == "whileloop" or "while" in args.syntax:
-        print("mark 2")
+            print("")
+    elif args.syntax == "operators":
+        print(LISP_syntax.hello_world)
+        if args.verbose:
+            print("")
+    elif args.syntax == "forloop":
+        print(LISP_syntax.forloop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "whileloop":
+        print(LISP_syntax.while_loop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "casestatement" or "case" in args.syntax:
+        print(LISP_syntax.case_statement)
+        if args.verbose:
+            print("")
+    elif args.syntax == "defineclass" or "class" in args.syntax:
+        print(LISP_syntax.define_class)
+        if args.verbose:
+            print("")
+    elif args.syntax == "variable":
+        print(LISP_syntax.variable_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "array":
+        print(LISP_syntax.array)
+        if args.verbose:
+            print("")
+    elif args.syntax == "function":
+        print(LISP_syntax.function_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "controlflow":
+        print(LISP_syntax.control_flow)
+        if args.verbose:
+            print("")
+    elif args.syntax == "input":
+        print(LISP_syntax.user_input)
+        if args.verbose:
+            print("")
+    elif args.syntax == "output":
+        print(LISP_syntax.output)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic":
+        print(LISP_syntax.arithmetic)
+        if args.verbose:
+            print("EXAMPLES:\naddition: (+ 43 72)\nsubtraction: (- 17 7)\n multiplication: (* 6 6)\nDivision: (/ 4 2)")
+    elif args.syntax == "helloworld":
+        print(LISP_syntax.hello_world)
+        if args.verbose:
+            print("")
     else:
         print("Error: syntactic query not found: try --help")
 
