@@ -1,4 +1,5 @@
-#! /usr/local/bin/python3.9
+#!/usr/local/bin/python3.9
+
 # cli syntax - provides syntax information and history from the command line
 
 import argparse
@@ -701,5 +702,4 @@ else:
     print("#########################################################################")
 
 print(dash_band)
-
 
