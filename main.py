@@ -21,7 +21,7 @@ class ProgrammingLanguage:
               "\nThe version represented here is: " + self.version)
 
     def output_historical_information(self):
-        print(self.name + " was created by " + self.creators + " first appearing in " + self.first_appeared + ". "
+        print(self.name + " was created by " + self.creators + "; first appearing in " + self.first_appeared + ". "
               "\nWikipedia writes: " + self.history)
 
 
@@ -86,9 +86,8 @@ perl_lang = ProgrammingLanguage("", "", "", "", "", "", "", "")
 
 ruby_lang = ProgrammingLanguage("", "", "", "", "", "", "", "")
 
-next0_lang = ProgrammingLanguage("", "", "", "", "", "", "", "")
+skeleton_lang = ProgrammingLanguage("", "", "", "", "", "", "", "")
 
-next1_lang = ProgrammingLanguage("", "", "", "", "", "", "", "")
 
 
 # Variable definitions
@@ -213,7 +212,7 @@ cpp_syntax = LanguageSyntax("options",
                             "hello world")
 
 
-insert_lang_here = LanguageSyntax("options",
+skeleton_syntax = LanguageSyntax("options",
                             "keywords",
                             "data types",
                             "operators",
@@ -392,7 +391,7 @@ elif "python" in args.language:
         print(python3_syntax.arithmetic)
         if args.verbose:
             print("")
-    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax: # works
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
         print(python3_syntax.arithmetic_operators)
         if args.verbose:
             print("mark1")
@@ -415,10 +414,480 @@ elif "python" in args.language:
     else:
         print("Error: syntactic query not found: try --help")
 
-elif "javascript" in args.language:
-    print("mark 5")
+
+
+elif "skeleton" in args.language:
+    if args.syntax == "classification":
+        skeleton_lang.output_language_classifications()
+        if args.verbose:
+            print("")
+    elif args.syntax == "history" or args.syntax == "historical":
+        skeleton_lang.output_historical_information()
+        if args.verbose:
+            print("")
+    elif args.syntax == "options":
+        skeleton_syntax.display_syntax_selection_options()
+        if args.verbose:
+            print("")
+    elif args.syntax == "keywords":
+        print(skeleton_syntax.keywords)
+        if args.verbose:
+            print("")
+    elif args.syntax == "datatypes":
+        print(skeleton_syntax.data_types)
+        if args.verbose:
+            print("")
+    elif args.syntax == "operators":
+        print(skeleton_syntax.operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "forloop":
+        print(skeleton_syntax.forloop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "whileloop":
+        print(skeleton_syntax.while_loop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "casestatement" or "case" in args.syntax:
+        print(skeleton_syntax.case_statement)
+        if args.verbose:
+            print("")
+    elif args.syntax == "defineclass" or "class" in args.syntax:
+        print(skeleton_syntax.define_class)
+        if args.verbose:
+            print("")
+    elif args.syntax == "definevariable" or "variable" in args.syntax:
+        print(skeleton_syntax.variable_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "array":
+        print(skeleton_syntax.array)
+        if args.verbose:
+            print("")
+    elif args.syntax == "function":
+        print(skeleton_syntax.function_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "controlflow":
+        print(skeleton_syntax.control_flow)
+        if args.verbose:
+            print("")
+    elif args.syntax == "input":
+        print(skeleton_syntax.user_input)
+        if args.verbose:
+            print("")
+    elif args.syntax == "output":
+        print(skeleton_syntax.output)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic":
+        print(skeleton_syntax.arithmetic)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
+        print(skeleton_syntax.arithmetic_operators)
+        if args.verbose:
+            print("mark1")
+    elif args.syntax == "comparisonoperators":
+        print(skeleton_syntax.comparison_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "logicaloperators":
+        print(skeleton_syntax.logical_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "builtinfunctions":
+        print(skeleton_syntax.builtin_functions)
+        if args.verbose:
+            print("")
+    elif args.syntax == "helloworld":
+        print(skeleton_syntax.hello_world)
+        if args.verbose:
+            print("")
+    else:
+        print("Error: syntactic query not found: try --help")
+
+
+
+elif "skeleton" in args.language:
+    if args.syntax == "classification":
+        skeleton_lang.output_language_classifications()
+        if args.verbose:
+            print("")
+    elif args.syntax == "history" or args.syntax == "historical":
+        skeleton_lang.output_historical_information()
+        if args.verbose:
+            print("")
+    elif args.syntax == "options":
+        skeleton_syntax.display_syntax_selection_options()
+        if args.verbose:
+            print("")
+    elif args.syntax == "keywords":
+        print(skeleton_syntax.keywords)
+        if args.verbose:
+            print("")
+    elif args.syntax == "datatypes":
+        print(skeleton_syntax.data_types)
+        if args.verbose:
+            print("")
+    elif args.syntax == "operators":
+        print(skeleton_syntax.operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "forloop":
+        print(skeleton_syntax.forloop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "whileloop":
+        print(skeleton_syntax.while_loop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "casestatement" or "case" in args.syntax:
+        print(skeleton_syntax.case_statement)
+        if args.verbose:
+            print("")
+    elif args.syntax == "defineclass" or "class" in args.syntax:
+        print(skeleton_syntax.define_class)
+        if args.verbose:
+            print("")
+    elif args.syntax == "definevariable" or "variable" in args.syntax:
+        print(skeleton_syntax.variable_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "array":
+        print(skeleton_syntax.array)
+        if args.verbose:
+            print("")
+    elif args.syntax == "function":
+        print(skeleton_syntax.function_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "controlflow":
+        print(skeleton_syntax.control_flow)
+        if args.verbose:
+            print("")
+    elif args.syntax == "input":
+        print(skeleton_syntax.user_input)
+        if args.verbose:
+            print("")
+    elif args.syntax == "output":
+        print(skeleton_syntax.output)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic":
+        print(skeleton_syntax.arithmetic)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
+        print(skeleton_syntax.arithmetic_operators)
+        if args.verbose:
+            print("mark1")
+    elif args.syntax == "comparisonoperators":
+        print(skeleton_syntax.comparison_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "logicaloperators":
+        print(skeleton_syntax.logical_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "builtinfunctions":
+        print(skeleton_syntax.builtin_functions)
+        if args.verbose:
+            print("")
+    elif args.syntax == "helloworld":
+        print(skeleton_syntax.hello_world)
+        if args.verbose:
+            print("")
+    else:
+        print("Error: syntactic query not found: try --help")
+
+
+
+elif "skeleton" in args.language:
+    if args.syntax == "classification":
+        skeleton_lang.output_language_classifications()
+        if args.verbose:
+            print("")
+    elif args.syntax == "history" or args.syntax == "historical":
+        skeleton_lang.output_historical_information()
+        if args.verbose:
+            print("")
+    elif args.syntax == "options":
+        skeleton_syntax.display_syntax_selection_options()
+        if args.verbose:
+            print("")
+    elif args.syntax == "keywords":
+        print(skeleton_syntax.keywords)
+        if args.verbose:
+            print("")
+    elif args.syntax == "datatypes":
+        print(skeleton_syntax.data_types)
+        if args.verbose:
+            print("")
+    elif args.syntax == "operators":
+        print(skeleton_syntax.operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "forloop":
+        print(skeleton_syntax.forloop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "whileloop":
+        print(skeleton_syntax.while_loop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "casestatement" or "case" in args.syntax:
+        print(skeleton_syntax.case_statement)
+        if args.verbose:
+            print("")
+    elif args.syntax == "defineclass" or "class" in args.syntax:
+        print(skeleton_syntax.define_class)
+        if args.verbose:
+            print("")
+    elif args.syntax == "definevariable" or "variable" in args.syntax:
+        print(skeleton_syntax.variable_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "array":
+        print(skeleton_syntax.array)
+        if args.verbose:
+            print("")
+    elif args.syntax == "function":
+        print(skeleton_syntax.function_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "controlflow":
+        print(skeleton_syntax.control_flow)
+        if args.verbose:
+            print("")
+    elif args.syntax == "input":
+        print(skeleton_syntax.user_input)
+        if args.verbose:
+            print("")
+    elif args.syntax == "output":
+        print(skeleton_syntax.output)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic":
+        print(skeleton_syntax.arithmetic)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
+        print(skeleton_syntax.arithmetic_operators)
+        if args.verbose:
+            print("mark1")
+    elif args.syntax == "comparisonoperators":
+        print(skeleton_syntax.comparison_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "logicaloperators":
+        print(skeleton_syntax.logical_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "builtinfunctions":
+        print(skeleton_syntax.builtin_functions)
+        if args.verbose:
+            print("")
+    elif args.syntax == "helloworld":
+        print(skeleton_syntax.hello_world)
+        if args.verbose:
+            print("")
+    else:
+        print("Error: syntactic query not found: try --help")
+
+
+
+elif "skeleton" in args.language:
+    if args.syntax == "classification":
+        skeleton_lang.output_language_classifications()
+        if args.verbose:
+            print("")
+    elif args.syntax == "history" or args.syntax == "historical":
+        skeleton_lang.output_historical_information()
+        if args.verbose:
+            print("")
+    elif args.syntax == "options":
+        skeleton_syntax.display_syntax_selection_options()
+        if args.verbose:
+            print("")
+    elif args.syntax == "keywords":
+        print(skeleton_syntax.keywords)
+        if args.verbose:
+            print("")
+    elif args.syntax == "datatypes":
+        print(skeleton_syntax.data_types)
+        if args.verbose:
+            print("")
+    elif args.syntax == "operators":
+        print(skeleton_syntax.operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "forloop":
+        print(skeleton_syntax.forloop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "whileloop":
+        print(skeleton_syntax.while_loop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "casestatement" or "case" in args.syntax:
+        print(skeleton_syntax.case_statement)
+        if args.verbose:
+            print("")
+    elif args.syntax == "defineclass" or "class" in args.syntax:
+        print(skeleton_syntax.define_class)
+        if args.verbose:
+            print("")
+    elif args.syntax == "definevariable" or "variable" in args.syntax:
+        print(skeleton_syntax.variable_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "array":
+        print(skeleton_syntax.array)
+        if args.verbose:
+            print("")
+    elif args.syntax == "function":
+        print(skeleton_syntax.function_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "controlflow":
+        print(skeleton_syntax.control_flow)
+        if args.verbose:
+            print("")
+    elif args.syntax == "input":
+        print(skeleton_syntax.user_input)
+        if args.verbose:
+            print("")
+    elif args.syntax == "output":
+        print(skeleton_syntax.output)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic":
+        print(skeleton_syntax.arithmetic)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
+        print(skeleton_syntax.arithmetic_operators)
+        if args.verbose:
+            print("mark1")
+    elif args.syntax == "comparisonoperators":
+        print(skeleton_syntax.comparison_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "logicaloperators":
+        print(skeleton_syntax.logical_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "builtinfunctions":
+        print(skeleton_syntax.builtin_functions)
+        if args.verbose:
+            print("")
+    elif args.syntax == "helloworld":
+        print(skeleton_syntax.hello_world)
+        if args.verbose:
+            print("")
+    else:
+        print("Error: syntactic query not found: try --help")
+
+
+elif "skeleton" in args.language:
+    if args.syntax == "classification":
+        skeleton_lang.output_language_classifications()
+        if args.verbose:
+            print("")
+    elif args.syntax == "history" or args.syntax == "historical":
+        skeleton_lang.output_historical_information()
+        if args.verbose:
+            print("")
+    elif args.syntax == "options":
+        skeleton_syntax.display_syntax_selection_options()
+        if args.verbose:
+            print("")
+    elif args.syntax == "keywords":
+        print(skeleton_syntax.keywords)
+        if args.verbose:
+            print("")
+    elif args.syntax == "datatypes":
+        print(skeleton_syntax.data_types)
+        if args.verbose:
+            print("")
+    elif args.syntax == "operators":
+        print(skeleton_syntax.operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "forloop":
+        print(skeleton_syntax.forloop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "whileloop":
+        print(skeleton_syntax.while_loop)
+        if args.verbose:
+            print("")
+    elif args.syntax == "casestatement" or "case" in args.syntax:
+        print(skeleton_syntax.case_statement)
+        if args.verbose:
+            print("")
+    elif args.syntax == "defineclass" or "class" in args.syntax:
+        print(skeleton_syntax.define_class)
+        if args.verbose:
+            print("")
+    elif args.syntax == "definevariable" or "variable" in args.syntax:
+        print(skeleton_syntax.variable_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "array":
+        print(skeleton_syntax.array)
+        if args.verbose:
+            print("")
+    elif args.syntax == "function":
+        print(skeleton_syntax.function_definition)
+        if args.verbose:
+            print("")
+    elif args.syntax == "controlflow":
+        print(skeleton_syntax.control_flow)
+        if args.verbose:
+            print("")
+    elif args.syntax == "input":
+        print(skeleton_syntax.user_input)
+        if args.verbose:
+            print("")
+    elif args.syntax == "output":
+        print(skeleton_syntax.output)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic":
+        print(skeleton_syntax.arithmetic)
+        if args.verbose:
+            print("")
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
+        print(skeleton_syntax.arithmetic_operators)
+        if args.verbose:
+            print("mark1")
+    elif args.syntax == "comparisonoperators":
+        print(skeleton_syntax.comparison_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "logicaloperators":
+        print(skeleton_syntax.logical_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "builtinfunctions":
+        print(skeleton_syntax.builtin_functions)
+        if args.verbose:
+            print("")
+    elif args.syntax == "helloworld":
+        print(skeleton_syntax.hello_world)
+        if args.verbose:
+            print("")
+    else:
+        print("Error: syntactic query not found: try --help")
+
 else:
     print("Error: First argument - [Language] - not supported or else not recognized")
+
+
+
 
 
 
