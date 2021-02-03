@@ -53,7 +53,7 @@ class LanguageSyntax:
         self.hello_world = hello_world
 
     def display_syntax_selection_options(self):
-        print("This will print list of available syntax argument terms you can search")
+        print("list of common syntax options\n" + str(options_list))
 
     def return_not_available(self, structure_in_question):
         print("Error: " + str(structure_in_question) + " is not available currently")
@@ -90,33 +90,49 @@ ruby_lang = ProgrammingLanguage("name", "paradigm", "typing", "creators", "first
 skeleton_lang = ProgrammingLanguage("name", "paradigm", "typing", "creators", "firstappeared", "history", "wikilink", "version")
 
 
-
 # Variable definitions
 dash_band = "-------------------------------------------------------\n"
-
+options_list = ["options", "keywords", "data types", "operators", "forloop", "whileloop",
+                "casestatements", "classdefinition", "variabledefinition", "arrays",
+                "functiondefinition", "controlflow", "userinput", "output", "arithmetic",
+                "arithmeticoperators", "comparisonoperators", "logicaloperators",
+                "builtinfunctions", "helloworld"]
 
 # LanguageSyntax object class instantiations
 
 LISP_syntax = LanguageSyntax("options",
                              "keywords",
-                             "data types",
-                             "Arithmetic Operators:\n+\t-\t*\t/\nmod|rem\tincf\tdecf\t\n"
-                             "Comparison Operators:\n=\t/=\t>\t<\n>=\t<=\tmax\tmin\n"
+                             "DATA TYPES:\nScalar types: number types, chars, symbols\n"
+                             "Data structures: lists, vectors, bit-vectors, strings\n",
+
+                             "Arithmetic Operators:\n+\t-\t*\t/\nmod\tincf\tdecf\t\n\n"
+                             "Comparison Operators:\n=\t/=\t>\t<\n>=\t<=\tmax\tmin\n\n"
                              "Logical Operators:\n(and A B)\t(or A B)\t(not A B)\t\n",
-                             "forloop",
+                             "FOR LOOPS in LISP:\n\n"
+                             "1st variant:\n"
+                             "(loop for [loopvar] in [list]\n\tdo (action))\n"
+                             "2nd variant:\n"
+                             "(loop for [loopvar] from [value1] to [value2]\n\tdo (action))\n",
+
                              "whileloop",
+
                              "(case (keyform)\n"
                              "((key1)   (action1   action2 ...) )\n"
                              "((key2)   (action1   action2 ...) )\n"
                              "...\n"
                              "((keyn)   (action1   action2 ...) ))\n",
+
                              "class definition",
-                             "variable definition",
+                             "variable definition:\nGlobal variables are generally set with 'defvar'\n"
+                             "(defvar x 234)\n(write x)\n",
                              "arrays",
                              "function definition",
                              "control flow",
                              "user input",
-                             "output",
+
+                             "OUTPUT IN LISP:\n(defvar x 250)\n(write x)\t(print x)\t(write-line x)\n"
+                             "(format t \"~a\" x)\n",
+
                              "arithmetic",
                              "arithmetic operators",
                              "comparison operators",
@@ -152,9 +168,7 @@ python3_syntax = LanguageSyntax("options",
                                 "and\t:\tlogical operator\n"
                                 "as\t:\tto create an alias\n"
                                 "assert\t:\tfor debugging\n"
-                                "break\t:\tbreak out of loop\n"
-                                ""
-                                + dash_band,
+                                "break\t:\tbreak out of loop\n" + dash_band,
                                 "data types",
                                 "operators",
                                 "forloop",
@@ -263,7 +277,7 @@ if "lisp" in args.language:
     elif args.syntax == "history" or args.syntax == "historical":
         LISP_lang.output_historical_information()
     elif args.syntax == "options":
-        LanguageSyntax.display_syntax_selection_options()
+        LISP_syntax.display_syntax_selection_options()
     elif args.syntax == "keywords":
         print(LISP_syntax.keywords)
         if args.verbose:
@@ -271,15 +285,30 @@ if "lisp" in args.language:
     elif args.syntax == "datatypes":
         print(LISP_syntax.data_types)
         if args.verbose:
-            print("")
+            print("System-defined symbols for data types in LISP:\n"
+                  "array\tfixnum\tpackage\tsimple-string\n"
+                  "atom\tfloat\tpathname\tsimple-vector\n"
+                  "bignum\tfunction\trandom-state\tsingle-float\n"
+                  "bit-vector\tinteger\trational\tstream\n"
+                  "character\tkeyword\treadtable\tstring\n"
+                  "[common]\tlist\tsequence\t[string-char]\n"
+                  "compiled-function\tlong-float\tshort-float\t symbol\n"
+                  "complex\tnill\tsigned-byte\tt\n"
+                  "cons\tnull\tsimple-array\tunsigned-byte\n"
+                  "double-float\tnumber\tsimple-bit-vector\tvector\n")
     elif args.syntax == "operators":
         print(LISP_syntax.operators)
         if args.verbose:
-            print("EXAMPLE:\n(+ 43 15)\t(/ 56 8)\t(mod 10 5)\n(incf var 2)\t(or 0 1)\t(and 1 1)")
+            print("OPERATOR EXAMPLES:\n\n"
+                  "Arithmetic:\n(+ 43 15)\t(/ 56 8)\t(mod 10 5)\n(incf var 2)\t(rem 10 5)\t(decf var 1)\n"
+                  "comparison:\n(= A B)\t\t(/= A B)\t(> A B)\n(< A B)\t\t(>= A B)\t(<= A B)\n"
+                  "logical:\n(or nil 1)\t(and 1 1)\t(not nil nil)")
     elif args.syntax == "forloop":
-        print(LISP_syntax.forloop)
+        print(LISP_syntax.for_loop)
         if args.verbose:
-            print("")
+            print("Examples:\n(loop for x in '(one two three)\n\tdo (format t \" ~s\" x))\n\n"
+                  "(loop for var from 10 to 10\n\tdo (print var))\n\n"
+                  "(loop for x from 1 to 20\n\tif(evenpx)\n\tdo (print x))\n")
     elif args.syntax == "whileloop":
         print(LISP_syntax.while_loop)
         if args.verbose:
@@ -353,7 +382,7 @@ elif "bash" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "forloop":
-        print(skeleton_syntax.forloop)
+        print(skeleton_syntax.for_loop)
         if args.verbose:
             print("")
     elif args.syntax == "whileloop":
@@ -426,7 +455,7 @@ elif "bash" in args.language:
 # PYTHON3
 
 
-elif "python" in args.language:
+elif "python" in args.language or "python3" in args.language:
     if args.syntax == "classification":
         skeleton_lang.output_language_classifications()
     elif args.syntax == "history" or args.syntax == "historical":
@@ -446,7 +475,7 @@ elif "python" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "forloop":
-        print(skeleton_syntax.forloop)
+        print(skeleton_syntax.for_loop)
         if args.verbose:
             print("")
     elif args.syntax == "whileloop":
@@ -537,7 +566,7 @@ elif "skeleton" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "forloop":
-        print(skeleton_syntax.forloop)
+        print(skeleton_syntax.for_loop)
         if args.verbose:
             print("")
     elif args.syntax == "whileloop":
@@ -627,7 +656,7 @@ elif "skeleton" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "forloop":
-        print(skeleton_syntax.forloop)
+        print(skeleton_syntax.for_loop)
         if args.verbose:
             print("")
     elif args.syntax == "whileloop":
@@ -702,4 +731,5 @@ else:
     print("#########################################################################")
 
 print(dash_band)
+
 
