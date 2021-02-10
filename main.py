@@ -114,7 +114,9 @@ LISP_syntax = LanguageSyntax("options",
                              "2nd variant:\n"
                              "(loop for [loopvar] from [value1] to [value2]\n\tdo (action))\n",
 
-                             "whileloop",
+                             "WHILE LOOP:\n"
+                             "(setq a 10)\n(loop \n\t(setq a (+ a 1))\n\t(write a)\n\t(terpri)"
+                             "\n\t(when (> a 17) (return a))\n)",
 
                              "(case (keyform)\n"
                              "((key1)   (action1   action2 ...) )\n"
@@ -122,23 +124,42 @@ LISP_syntax = LanguageSyntax("options",
                              "...\n"
                              "((keyn)   (action1   action2 ...) ))\n",
 
-                             "class definition",
+                             "CLASS DEFINITION:\n(defclass class-name (superclass-name*)\n"
+                             "(slot-description*)\n"
+                             "class-option*))\n",
+
                              "variable definition:\nGlobal variables are generally set with 'defvar'\n"
-                             "(defvar x 234)\n(write x)\n",
-                             "arrays",
-                             "function definition",
+                             "(defvar x 234)\n(write x)\n"
+                             "Since there is no type declaration for variables in LISP, "
+                             "you directly specify a value for a symbol with the setq construct:\n"
+                             "(setq x 10)\t(write-line x)",
+
+                             "ARRAYS:\n"
+                             "To create an array with 10 cells:\n(setf my-array (array_name '(10)))\n"
+                             "To access content of the tenth item in that array:\n(aref array_name 9)\n"
+                             "To print an array\n(write array_name)\n",
+
+                             "(defun function_name (param0 param1 param2) \"function comment\" body)"
+                             "\n\nFunction call:\n\n(function_name param0 param1 param2)",
+
                              "control flow",
-                             "user input",
+
+                             "Store user-input in a variable:\n"
+                             "(defvar inputvar (read))\n",
 
                              "OUTPUT IN LISP:\n(defvar x 250)\n(write x)\t(print x)\t(write-line x)\n"
                              "(format t \"~a\" x)\n",
 
-                             "arithmetic",
-                             "arithmetic operators",
+                             "ARITHMETIC EXAMPLES:\n(+ 10 12)\t(mod 36 6)\t(* 12 12)\n(/ 40 4)\t(- 6 4)\t\t(rem 12 5)",
+                             "ARITHMETIC OPERATORS:\t+, -, *, /, mod, rem",
+
                              "comparison operators",
+
                              "logical operators",
+
                              "builtin functions",
-                             "hello world")
+
+                             "#! /usr/bin/clisp\n\n(write-line \"hello, world\")")
 
 
 bash_syntax = LanguageSyntax("options",
@@ -320,13 +341,14 @@ if "lisp" in args.language:
                   "(3 (format t \"~% Wednesday\"))\n(4 (format t \"~% Thursday\"))\n(5 (format t \"~% Friday\"))\n"
                   "(6 (format t \"~% Saturday\"))\n(7 (format t \"~% Sunday\")))")
     elif args.syntax == "defineclass" or "class" in args.syntax:
-        print(LISP_syntax.define_class)
+        print(LISP_syntax.class_definition)
         if args.verbose:
             print("")
     elif args.syntax == "variable":
         print(LISP_syntax.variable_definition)
         if args.verbose:
-            print("")
+            print("(setq x 10)\n(setq t 20)\n(format t \"x = ~2d ~%\" x y)\n\n"
+                  "(setq x 100)\n(setq y 200)\n(format t \"x = ~2d y = ~2d\" x y)")
     elif args.syntax == "array":
         print(LISP_syntax.array)
         if args.verbose:
@@ -351,6 +373,22 @@ if "lisp" in args.language:
         print(LISP_syntax.arithmetic)
         if args.verbose:
             print("EXAMPLES:\naddition: (+ 43 72)\nsubtraction: (- 17 7)\n multiplication: (* 6 6)\nDivision: (/ 4 2)")
+    elif args.syntax == "arithmetic operators" or ("arithmetic" and "operators") in args.syntax:  # works
+        print(LISP_syntax.arithmetic_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "comparisonoperators" or ("comparison" and "operators") in args.syntax:
+        print(LISP_syntax.comparison_operators)
+        if args.verbose:
+            print("")
+    elif args.syntax == "logicaloperators" or ("logical" and "operators") in args.syntax:
+        print(LISP_syntax.logical_operators)
+        if args.verbosE:
+            print("")
+    elif args.syntax == "builtinfunctions":
+        print(LISP_syntax.builtin_functions)
+        if args.verbose:
+            print("")
     elif args.syntax == "helloworld":
         print(LISP_syntax.hello_world)
         if args.verbose:
@@ -394,7 +432,7 @@ elif "bash" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "defineclass" or "class" in args.syntax:
-        print(skeleton_syntax.define_class)
+        print(skeleton_syntax.class_definition)
         if args.verbose:
             print("")
     elif args.syntax == "definevariable" or "variable" in args.syntax:
@@ -487,7 +525,7 @@ elif "python" in args.language or "python3" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "defineclass" or "class" in args.syntax:
-        print(skeleton_syntax.define_class)
+        print(skeleton_syntax.class_definition)
         if args.verbose:
             print("")
     elif args.syntax == "definevariable" or "variable" in args.syntax:
@@ -578,7 +616,7 @@ elif "skeleton" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "defineclass" or "class" in args.syntax:
-        print(skeleton_syntax.define_class)
+        print(skeleton_syntax.class_definition)
         if args.verbose:
             print("")
     elif args.syntax == "definevariable" or "variable" in args.syntax:
@@ -668,7 +706,7 @@ elif "skeleton" in args.language:
         if args.verbose:
             print("")
     elif args.syntax == "defineclass" or "class" in args.syntax:
-        print(skeleton_syntax.define_class)
+        print(skeleton_syntax.class_definition)
         if args.verbose:
             print("")
     elif args.syntax == "definevariable" or "variable" in args.syntax:
@@ -731,5 +769,7 @@ else:
     print("#########################################################################")
 
 print(dash_band)
+
+
 
 
