@@ -28,29 +28,6 @@ This is NOT a tool for learning the concepts of programming. This program is int
 
 
 
-#### Development stages
-
-to be written
-
-
-
-
-
-
-
-
-
-- first two languages to be added after LISP are python and javascript, and then C
-
-
-
-#### FEATURES
-
-Colorama python module to create colored code syntax highlighting for output
-
-
-
-
 
 
 
