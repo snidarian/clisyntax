@@ -6,7 +6,7 @@ clisyntax is your tool to coding in less-than-familiar programming languages!
 
 
 ### GOAL:
-Development of CLI program providing quick access to syntactic information in a given programming language
+Development of CLI program providing quick access to syntactic information in a given programming language.
 
 
 
@@ -15,15 +15,8 @@ This is NOT a tool for learning the concepts of programming. This program is int
 
 
 #### Languages to be supported by cliSyntax (in the following order):
-- Python (3.9)
-- JavaScript
 - C (Ansi standard)
 - LISP (common Lisp)
-- Java
-- Ruby
-- Perl
-- Java
-- C++
 
 
 
