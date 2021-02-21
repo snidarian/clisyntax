@@ -1,5 +1,6 @@
 ### SQL is a language used to interact with 'relational database management systems'
 
+
 A database is any collection of related information (a handwritten shopping list is a crude version of a shopping list)
 
 The database management system (dbms) is not the database; It is the software that manages the database.
