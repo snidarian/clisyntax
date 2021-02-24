@@ -1,22 +1,8 @@
-### Syntax Reference command line program
+
+I have changed the direction of this project.
 
 
-BAREbones syntax structure available from the command line with only a single command string.
-You know how to use the structures and what they do, you just can't remember the syntactic details!
-clisyntax is your tool to coding in less-than-familiar programming languages!
-
-
-### GOAL:
-Development of CLI program providing quick access to syntactic information in a given programming language.
-
-
-
-#### Languages to be supported by cliSyntax (in the following order):
-- C (Ansi standard)
-- LISP (common Lisp)
-
-
-
+Whereas before it was a program that would supply langauge specific programming syntax from the command line, now it's going to be a collection of programming manuals store in plain text with the program itself being a sort of grep-like tool to search through and grab the appropriate sections of manuals related to what the user is querying.
 
 
 
